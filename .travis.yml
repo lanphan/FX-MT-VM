@@ -1,7 +1,5 @@
-language: ruby
-
-sudo: false
-
+language: generic
+sudo: required
 dist: trusty
 
 install:
