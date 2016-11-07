@@ -625,7 +625,8 @@ quick_run() {
 install_support_tools() {
   type wget cabextract install wine >&2
   wine filever > /dev/null && return
-  local tools_url="https://github.com/EA31337/FX-MT-VM/releases/download/4.x/WindowsXP-KB838079-SupportTools-ENU.exe"
+#local tools_url="https://github.com/EA31337/FX-MT-VM/releases/download/4.x/WindowsXP-KB838079-SupportTools-ENU.exe"
+  local tools_url="https://web.archive.org/web/http://download.microsoft.com/download/E/6/A/E6A04295-D2A8-40D0-A0C5-241BFECD095E/W2KSP4_EN.EXE"
   local dtmp=$(mktemp -d)
   echo "Installing support tools..." >&2
   cd "$dtmp"
