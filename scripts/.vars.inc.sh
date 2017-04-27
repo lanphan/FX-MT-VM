@@ -20,13 +20,16 @@ TPL_TEST="$ROOT/conf/$CONF_TEST"
 TPL_TERM="$ROOT/conf/$CONF_TERM"
 TPL_EA="$ROOT/conf/$CONF_EA"
 TERMINAL_ARG="/skipupdate /portable"
+unset TERMINAL_DIR # @fixme: Quick fix for problem with vagrant and AWS.
 TERMINAL_DIR="${TERMINAL_DIR:-$(dirname "$(find "$HOME" "$OUT" -name terminal.exe -print -quit)")}"
 TERMINAL_EXE="$(find "$TERMINAL_DIR" -name terminal.exe -print -quit)"
 MTEDITOR_EXE="$(find "$TERMINAL_DIR" -name metaeditor.exe -print -quit)"
 MQL_DIR="MQL4"
 if [ "$TERMINAL_DIR" ]; then
   TERMINAL_CNF="${TERMINAL_DIR}/config"
+  unset TERMINAL_INI # @fixme: Quick fix for problem with vagrant and AWS.
   TERMINAL_INI="${TERMINAL_INI:-$TERMINAL_CNF/$CONF_TERM}"
+  unset TESTER_INI # @fixme: Quick fix for problem with vagrant and AWS.
   TESTER_INI="${TESTER_INI:-$TERMINAL_CNF/$CONF_TEST}"
   TESTER_DIR="$TERMINAL_DIR/tester"
   HISTORY_DIR="$TERMINAL_DIR/history"
