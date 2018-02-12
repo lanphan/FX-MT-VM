@@ -620,19 +620,19 @@ install_mt() {
   configure_display
   case $mt_ver in
     4)
-      . $CWD/install_mt4.sh
+      . "$CWD"/install_mt4.sh
     ;;
     4x)
-      . $CWD/install_mt4-xdot.sh
+      . "$CWD"/install_mt4-xdot.sh
     ;;
     5)
-      . $CWD/install_mt5.sh
+      . "$CWD"/install_mt5.sh
     ;;
     4.0.0.*|5.0.0.*)
       [ ! -d "$WINE_PATH" ] && mkdir $VFLAG -p "$WINE_PATH"
       cd "$WINE_PATH"
       wget -nv -c "$REPO_URL/releases/download/${mt_ver:0:1}.x/mt-$mt_ver.zip"
-      unzip -ou mt*.zip
+      unzip -ou "mt-$mt_ver.zip"
       cd -
     ;;
     *)
